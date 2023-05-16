@@ -14,7 +14,7 @@ import java.util.Optional;
 
 @CrossOrigin(origins = "http://localhost:8081")
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/dashboard")
 @RequiredArgsConstructor
 public class CountryController {
     @Autowired
@@ -102,6 +102,25 @@ public class CountryController {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
 
+    }
+
+//    @GetMapping("/countries/name")
+//    public ResponseEntity<List<Country>> findByName(@RequestParam String name) {
+//        return new ResponseEntity<List<Country>>(countryRepository.findByName(name), HttpStatus.OK);
+//    }
+
+    @GetMapping("/tutorials/name")
+    public ResponseEntity<List<Country>> findByName(@RequestParam String name) {
+        try {
+            List<Country> countries = countryRepository.findByName(name);
+
+            if (countries.isEmpty()) {
+                return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+            }
+            return new ResponseEntity<>(countries, HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 
 //    @GetMapping("/countries/{name}")
