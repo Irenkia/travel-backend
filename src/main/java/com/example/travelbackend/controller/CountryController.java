@@ -4,6 +4,7 @@ import com.example.travelbackend.model.Country;
 import com.example.travelbackend.repository.CountryRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -15,10 +16,14 @@ import java.util.Optional;
 @CrossOrigin(origins = "http://localhost:8081")
 @RestController
 @RequestMapping("/api/dashboard")
-@RequiredArgsConstructor
+//@RequiredArgsConstructor
 public class CountryController {
     @Autowired
     private final CountryRepository countryRepository;
+
+    public CountryController(@Qualifier("countries") CountryRepository countryRepository) {
+        this.countryRepository = countryRepository;
+    }
 
     @GetMapping("/countries")
 //    @CrossOrigin(origins = "http://localhost:8081")

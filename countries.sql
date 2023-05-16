@@ -1,12 +1,12 @@
 CREATE TABLE countries(
-                      id integer primary key,
+                      country_id integer primary key,
                       name varchar(30) NOT NULL,
                       capital varchar(30) NOT NULL,
                       region varchar(30)
 );
 
 INSERT INTO countries
-VALUES(1,'Colombia','Bogot?','Americas'),
+VALUES(1,'Colombia','Bogota','Americas'),
       (2,'Indonesia','Jakarta','Asia'),
       (3,'Portugal','Lisbon','Europe'),
       (4,'Nepal','Kathmandu','Asia'),
