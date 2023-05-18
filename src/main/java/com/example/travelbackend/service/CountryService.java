@@ -2,17 +2,18 @@ package com.example.travelbackend.service;
 
 import com.example.travelbackend.model.Country;
 import com.example.travelbackend.repository.CountryRepository;
-import lombok.RequiredArgsConstructor;
+//import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Component;
+//import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Qualifier("countries")
 @Service
-@Component
+//@Component
 //@RequiredArgsConstructor
 public class CountryService {
     @Autowired
