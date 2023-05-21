@@ -4,9 +4,11 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 @Entity
 @Table(name = "countries")
+@Qualifier("countries")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

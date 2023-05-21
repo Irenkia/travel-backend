@@ -15,7 +15,7 @@ public class PersonService {
     @Autowired
     private final PersonRepository personRepository;
 
-    public PersonService(PersonRepository personRepository) {
+    public PersonService(@Qualifier("persons") PersonRepository personRepository) {
         this.personRepository = personRepository;
     }
 

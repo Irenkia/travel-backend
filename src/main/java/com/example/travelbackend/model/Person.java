@@ -4,9 +4,11 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 @Entity
 @Table(name = "persons")
+@Qualifier("persons")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -16,11 +18,11 @@ public class Person {
     @Column(name = "person_id")
     private Integer personId;
 
-    @Column(name = "first_name")
-    private String firstName;
+    @Column(name = "name")
+    private String name;
 
-    @Column(name = "last_name")
-    private String lastName;
+    @Column(name = "surname")
+    private String surname;
 
     @Column(name = "email")
     private String email;
@@ -28,9 +30,9 @@ public class Person {
     @Column(name = "password")
     private String password;
 
-    public Person(String firstName, String lastName, String email, String password) {
-        this.firstName = firstName;
-        this.lastName = lastName;
+    public Person(String name, String surname, String email, String password) {
+        this.name = name;
+        this.surname = surname;
         this.email = email;
         this.password = password;
     }
