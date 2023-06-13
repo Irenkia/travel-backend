@@ -1,0 +1,17 @@
+spring:
+  datasource:
+    username: irenkia
+    password: superhero@54321
+    url: jdbc:sqlserver://travel-server.database.windows.net:1433;database=travel;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;
+  jpa:
+    show-sql: 'true'
+    hibernate:
+      ddl-auto: update
+      dialect: org.hibernate.dialect.SQLServer2012Dialect
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG
+server:
+  port: 9191
